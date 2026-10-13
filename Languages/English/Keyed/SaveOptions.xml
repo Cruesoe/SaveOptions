@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <SaveOptions_SettingsCategory>Save Options</SaveOptions_SettingsCategory>
+  <SaveOptions_NegativeEvents>Save on negative events</SaveOptions_NegativeEvents>
+  <SaveOptions_NegativeEventsTip>Save to "Bad Event" when a negative event or major threat letter arrives. Saves run between ticks and wait while saving is temporarily disabled.</SaveOptions_NegativeEventsTip>
+  <SaveOptions_AppendEventLabel>Add the event name to the save filename</SaveOptions_AppendEventLabel>
+  <SaveOptions_AppendEventLabelTip>Requires Save on negative events. Use a separate filename for each event label instead of overwriting "Bad Event".</SaveOptions_AppendEventLabelTip>
+  <SaveOptions_Cooldown>Negative-event save cooldown: {0} seconds</SaveOptions_Cooldown>
+  <SaveOptions_NegativeEventsRequired>Requires Save on negative events. Measured in real time.</SaveOptions_NegativeEventsRequired>
+  <SaveOptions_SaveAndQuit>Save when quitting</SaveOptions_SaveAndQuit>
+  <SaveOptions_SaveAndQuitTip>Replace the normal quit buttons with Save and Quit, using your colony's name. Hold Alt to quit without saving. Commitment mode keeps its normal buttons.</SaveOptions_SaveAndQuitTip>
+  <SaveOptions_SaveOnGameStart>Save new colonies as "Start"</SaveOptions_SaveOnGameStart>
+  <SaveOptions_SaveOnGameStartTip>Save after the intro is dismissed and the starting drop pods have landed. Each new colony overwrites the same "Start" file.</SaveOptions_SaveOnGameStartTip>
+  <SaveOptions_AutoLoad>Automatically load the latest save on startup</SaveOptions_AutoLoad>
+  <SaveOptions_AutoLoadTip>Load the most recently modified save, including autosaves. Returning to the menu does not reload it. Startup errors or a previous failed automatic load keep you at the menu.</SaveOptions_AutoLoadTip>
+  <SaveOptions_ShowPrompt>Show a countdown before automatically loading</SaveOptions_ShowPrompt>
+  <SaveOptions_ShowPromptTip>Requires automatic loading. Press any key or click during the countdown to stay at the main menu.</SaveOptions_ShowPromptTip>
+  <SaveOptions_PromptDuration>Startup countdown: {0} seconds</SaveOptions_PromptDuration>
+  <SaveOptions_PromptRequired>Requires automatic loading and Show a countdown.</SaveOptions_PromptRequired>
+  <SaveOptions_Logging>Log automatic loading activity</SaveOptions_Logging>
+  <SaveOptions_LoggingTip>Write the automatically loaded save's name to the game log. Errors are always logged.</SaveOptions_LoggingTip>
+  <SaveOptions_AutoLoadPrompt>Loading your latest save in {0} seconds.\nPress any key or click to stay at the main menu.</SaveOptions_AutoLoadPrompt>
+  <SaveOptions_SavedStartFile>Saved starting colony as "{0}".</SaveOptions_SavedStartFile>
+  <SaveOptions_SavedEventFile>Saved negative event as "{0}".</SaveOptions_SavedEventFile>
+  <SaveOptions_SaveFailed>Could not save "{0}". Your colony remains open.</SaveOptions_SaveFailed>
+</LanguageData>

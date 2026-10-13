@@ -1,0 +1,14 @@
+**/bin/
+**/obj/
+.vs/
+*.user
+*.suo
+*.pdb
+Assets.zip
+Assets.zip.*
+Directory.Build.props
+Directory.Build.targets
+*.slnx
+AGENTS.md
+CLAUDE.md
+TestResults/

@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <OutputType>Exe</OutputType>
+    <IsRimWorldMod>false</IsRimWorldMod>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="../Source/SavePolicies.cs" Link="SavePolicies.cs" />
+    <Compile Include="../Source/SaveService.cs" Link="SaveService.cs" />
+  </ItemGroup>
+</Project>
