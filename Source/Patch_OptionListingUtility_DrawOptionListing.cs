@@ -5,6 +5,7 @@ using UnityEngine;
 using Verse;
 
 namespace SaveOptions;
+
 [HarmonyPatch(typeof(OptionListingUtility), nameof(OptionListingUtility.DrawOptionListing))]
 public static class Patch_OptionListingUtility_DrawOptionListing
 {

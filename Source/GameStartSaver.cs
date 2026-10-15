@@ -2,12 +2,12 @@ using RimWorld;
 using Verse;
 
 namespace SaveOptions;
+
 public class GameStartSaver : GameComponent
 {
     public const string StartSaveName = "Start";
 
-    // Settle time after the last pod clears, and a cap so a scenario that never
-    // uses pods (or leaves one parked) still gets its save.
+    // Settle time after the last pod clears, capped for scenarios without pods or with a parked pod.
     private const int SettleTicks = 60;
     private const int MaxWaitTicks = 2500;
 

@@ -16,9 +16,9 @@
   <SaveOptions_ShowPrompt>Show a countdown before automatically loading</SaveOptions_ShowPrompt>
   <SaveOptions_ShowPromptTip>Requires automatic loading. Press any key or click during the countdown to stay at the main menu.</SaveOptions_ShowPromptTip>
   <SaveOptions_PromptDuration>Startup countdown: {0} seconds</SaveOptions_PromptDuration>
-  <SaveOptions_PromptRequired>Requires automatic loading and Show a countdown.</SaveOptions_PromptRequired>
+  <SaveOptions_PromptRequired>Requires automatic loading and the startup countdown.</SaveOptions_PromptRequired>
   <SaveOptions_Logging>Log automatic loading activity</SaveOptions_Logging>
-  <SaveOptions_LoggingTip>Write the automatically loaded save's name to the game log. Errors are always logged.</SaveOptions_LoggingTip>
+  <SaveOptions_LoggingTip>Requires automatic loading. Write the automatically loaded save's name to the game log. Errors are always logged.</SaveOptions_LoggingTip>
   <SaveOptions_AutoLoadPrompt>Loading your latest save in {0} seconds.\nPress any key or click to stay at the main menu.</SaveOptions_AutoLoadPrompt>
   <SaveOptions_SavedStartFile>Saved starting colony as "{0}".</SaveOptions_SavedStartFile>
   <SaveOptions_SavedEventFile>Saved negative event as "{0}".</SaveOptions_SavedEventFile>

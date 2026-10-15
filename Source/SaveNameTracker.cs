@@ -2,6 +2,7 @@ using RimWorld;
 using Verse;
 
 namespace SaveOptions;
+
 public class SaveNameTracker : GameComponent
 {
     private string? generatedName;
@@ -14,10 +15,12 @@ public class SaveNameTracker : GameComponent
     {
         Scribe_Values.Look(ref generatedName, "generatedName");
     }
+
     public static bool CanResolveSaveName()
     {
         return Current.Game?.World != null && Find.FactionManager != null && Faction.OfPlayer != null;
     }
+
     public static string SaveFileName()
     {
         Faction player = Faction.OfPlayer;

@@ -44,9 +44,10 @@ public sealed class SaveOptionsMod : Mod
         GUI.enabled = previousEnabled && Settings.AutoLoadLastSave && Settings.ShowAutoLoadPrompt;
         list.Label("SaveOptions_PromptDuration".Translate(Settings.PromptSeconds), tooltip: "SaveOptions_PromptRequired".Translate());
         Settings.PromptSeconds = (int)list.Slider(Settings.PromptSeconds, 1, 60);
-        GUI.enabled = previousEnabled;
+        GUI.enabled = previousEnabled && Settings.AutoLoadLastSave;
         list.CheckboxLabeled("SaveOptions_Logging".Translate(), ref Settings.LoggingEnabled,
             "SaveOptions_LoggingTip".Translate());
+        GUI.enabled = previousEnabled;
         list.End();
     }
 }

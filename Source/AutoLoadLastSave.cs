@@ -31,16 +31,22 @@ public static class AutoLoadLastSave
                 skipped = true;
                 settings.AutoLoadInProgress = false;
                 settings.Write();
-                Log.Warning("[Save Options] Previous automatic load did not complete; staying at the main menu.");
+                Log.Warning("[Save Options] The previous automatic load did not finish; staying at the main menu.");
             }
         }
         if (skipped)
         {
             return;
         }
-        if (!settings.AutoLoadLastSave || Log.Messages.Any(message => message.type == LogMessageType.Error))
+        if (!settings.AutoLoadLastSave)
         {
             skipped = true;
+            return;
+        }
+        if (Log.Messages.Any(message => message.type == LogMessageType.Error))
+        {
+            skipped = true;
+            Log.Message("[Save Options] Errors were logged during startup; staying at the main menu instead of loading the latest save.");
             return;
         }
         if (Find.WindowStack.Windows.Count > 0)
@@ -48,11 +54,6 @@ public static class AutoLoadLastSave
             return;
         }
 
-        if (Event.current.type == EventType.KeyDown || Event.current.type == EventType.MouseDown)
-        {
-            skipped = true;
-            return;
-        }
         if (settings.ShowAutoLoadPrompt)
         {
             promptEndsAt ??= Time.realtimeSinceStartup + settings.PromptSeconds;

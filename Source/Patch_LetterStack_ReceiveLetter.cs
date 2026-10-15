@@ -10,6 +10,8 @@ namespace SaveOptions;
     new[] { typeof(Letter), typeof(string), typeof(int), typeof(bool) })]
 public static class Patch_LetterStack_ReceiveLetter
 {
+    private static readonly bool PermanentInjuryLoaded = AccessTools.TypeByName("LetterPermanentInjury.Patch") != null;
+
     public static void Postfix(LetterStack __instance, Letter let, int delayTicks)
     {
         if (!SaveOptionsMod.Settings.SaveOnNegativeEvent || Current.ProgramState != ProgramState.Playing ||
@@ -20,7 +22,7 @@ public static class Patch_LetterStack_ReceiveLetter
         }
 
         // Ignore injury letters sent inside damage application without patching another mod's assembly.
-        if (AccessTools.TypeByName("LetterPermanentInjury.Patch") != null)
+        if (PermanentInjuryLoaded)
         {
             foreach (StackFrame frame in new StackTrace().GetFrames())
             {
