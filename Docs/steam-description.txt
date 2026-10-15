@@ -1,27 +1,15 @@
 [b]Save Options saves your colony when something bad happens, saves when you quit, and loads your latest save when the game starts.[/b]
 
-It brings Save on Negative Event, Save and Quit, and an automatic loader together in one mod, with every feature on its own switch in one settings page.
-
 [h2]Features[/h2]
 [list]
-[*][b]Save on negative events:[/b] When a major threat or negative event letter arrives, the colony is saved to "Bad Event" between ticks, so it never interrupts the game mid-update.
-[*]When the game briefly blocks saving, the event save waits until saving is allowed again.
-[*][b]Save and quit:[/b] Quit to main menu and Quit to OS become Save and quit to menu and Save and quit to OS, saving under your colony's name.
-[*]Hold Alt to get the normal quit buttons back and quit without saving.
-[*]Commitment mode keeps its own save-and-quit buttons.
-[*]If a save fails, the game stays open instead of quitting, and a message tells you.
-[*][b]Start save:[/b] Each new colony can be saved as "Start" once the intro is dismissed and the starting drop pods have landed.
-[*][b]Auto load:[/b] When the game starts, your most recently modified save is loaded automatically, including autosaves and event saves.
-[*]A short countdown lets you press any key or click to stay at the main menu instead.
-[*]Auto load only happens once per launch, so returning to the main menu never reloads a save.
-[*]If an automatic load fails or crashes the game, the next launch stays at the main menu instead of trying again.
-[*]If errors appear while the game starts up, it stays at the main menu.
+[*][b]Save on negative events:[/b] Major threats and negative events save your colony to "Bad Event".
+[*][b]Save and quit:[/b] The quit buttons save under your colony's name first. Hold Alt to quit without saving.
+[*][b]Start save:[/b] Each new colony can be saved as "Start" once it has landed.
+[*][b]Auto load:[/b] Your latest save loads when the game starts. Press any key during the countdown to stay at the menu.
 [/list]
 
 [h2]Compatibility[/h2]
-Not compatible with Save on Negative Event, Save and Quit, or Auto Load Last Save, because Save Options does the same jobs. Disable them when using this mod.
-Colonies saved with Save and Quit load cleanly and keep their save name.
-Injury letters from Letter Permanent Injury don't trigger negative-event saves.
+Replaces Save on Negative Event, Save and Quit, and Auto Load Last Save, so disable them when using this mod.
 Safe to add to an existing save.
 
 [h2]Credits[/h2]
