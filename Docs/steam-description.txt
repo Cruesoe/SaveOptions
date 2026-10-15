@@ -1,0 +1,40 @@
+[b]Save Options saves your colony when something bad happens, saves when you quit, and loads your latest save when the game starts.[/b]
+
+It brings Save on Negative Event, Save and Quit, and an automatic loader together in one mod, with every feature on its own switch in one settings page.
+
+[h2]Features[/h2]
+[list]
+[*][b]Save on negative events:[/b] When a major threat or negative event letter arrives, the colony is saved to "Bad Event" between ticks, so it never interrupts the game mid-update.
+[*]When the game briefly blocks saving, the event save waits until saving is allowed again.
+[*][b]Save and quit:[/b] Quit to main menu and Quit to OS become Save and quit to menu and Save and quit to OS, saving under your colony's name.
+[*]Hold Alt to get the normal quit buttons back and quit without saving.
+[*]Commitment mode keeps its own save-and-quit buttons.
+[*]If a save fails, the game stays open instead of quitting, and a message tells you.
+[*][b]Start save:[/b] Each new colony can be saved as "Start" once the intro is dismissed and the starting drop pods have landed.
+[*][b]Auto load:[/b] When the game starts, your most recently modified save is loaded automatically, including autosaves and event saves.
+[*]A short countdown lets you press any key or click to stay at the main menu instead.
+[*]Auto load only happens once per launch, so returning to the main menu never reloads a save.
+[*]If an automatic load fails or crashes the game, or errors appear during startup, the game stays at the main menu next time instead of trying again.
+[/list]
+
+[h2]Settings[/h2]
+[list]
+[*][b]Save on negative events[/b]: Saves to "Bad Event" when a major threat or negative event arrives. On by default.
+[*][b]Add the event name to the save filename[/b]: Keeps a separate save for each event, such as "Bad Event_Raid", instead of overwriting one file. Off by default.
+[*][b]Negative-event save cooldown[/b]: The minimum real time between event saves, from 1 to 200 seconds. 30 seconds by default.
+[*][b]Save when quitting[/b]: Replaces the quit buttons with save and quit. On by default.
+[*][b]Save new colonies as "Start"[/b]: Saves each new colony once it has landed. Off by default.
+[*][b]Automatically load the latest save on startup[/b]: On by default.
+[*][b]Show a countdown before automatically loading[/b]: Gives you time to stay at the main menu. On by default.
+[*][b]Startup countdown[/b]: From 1 to 60 seconds. 3 seconds by default.
+[*][b]Log automatic loading activity[/b]: Writes the name of the loaded save to the log. Off by default.
+[/list]
+
+[h2]Compatibility[/h2]
+Not compatible with Save on Negative Event, Save and Quit, or Auto Load Last Save, because Save Options does the same jobs. Disable them when using this mod.
+Colonies saved with Save and Quit load cleanly and keep their save name.
+Injury letters from Letter Permanent Injury don't trigger negative-event saves.
+Safe to add to an existing save.
+
+[h2]Credits[/h2]
+Thanks to [b]aRandomKiwi[/b], whose RimSaves inspired the negative-event saves, and to [b]Auto Load Last Save[/b] for the idea behind automatic loading.

@@ -1,4 +1,4 @@
-using System;
+using UnityEngine;
 using Verse;
 
 namespace SaveOptions;
@@ -30,8 +30,8 @@ public sealed class SaveOptionsSettings : ModSettings
         Scribe_Values.Look(ref AutoLoadInProgress, "autoLoadInProgress", false);
         if (Scribe.mode == LoadSaveMode.PostLoadInit)
         {
-            CooldownSeconds = Math.Clamp(CooldownSeconds, 1, 200);
-            PromptSeconds = Math.Clamp(PromptSeconds, 1, 60);
+            CooldownSeconds = Mathf.Clamp(CooldownSeconds, 1, 200);
+            PromptSeconds = Mathf.Clamp(PromptSeconds, 1, 60);
         }
     }
 }
