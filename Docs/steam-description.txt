@@ -14,7 +14,8 @@ It brings Save on Negative Event, Save and Quit, and an automatic loader togethe
 [*][b]Auto load:[/b] When the game starts, your most recently modified save is loaded automatically, including autosaves and event saves.
 [*]A short countdown lets you press any key or click to stay at the main menu instead.
 [*]Auto load only happens once per launch, so returning to the main menu never reloads a save.
-[*]If an automatic load fails or crashes the game, or errors appear during startup, the game stays at the main menu next time instead of trying again.
+[*]If an automatic load fails or crashes the game, the next launch stays at the main menu instead of trying again.
+[*]If errors appear while the game starts up, it stays at the main menu.
 [/list]
 
 [h2]Compatibility[/h2]
