@@ -21,7 +21,7 @@ public sealed class NegativeEventSaver : GameComponent
         {
             return;
         }
-        pendingName = SavePolicies.EventSaveName(letter.Label.ToString(), settings.AppendEventLabel);
+        pendingName = SavePolicies.EventSaveName(letter.Label.RawText.StripTags(), settings.AppendEventLabel);
     }
 
     public override void GameComponentUpdate()

@@ -15,7 +15,18 @@ public static class Patch_DamageWorker_AddInjury_FinalizeAndAddInjury
 
     public static bool Prepare() => AccessTools.TypeByName("LetterPermanentInjury.Patch") != null;
 
-    public static void Prefix() => depth++;
+    public static void Prefix(out bool __state)
+    {
+        depth++;
+        __state = true;
+    }
 
-    public static void Finalizer() => depth--;
+    // Decrements only when the prefix ran.
+    public static void Finalizer(bool __state)
+    {
+        if (__state)
+        {
+            depth--;
+        }
+    }
 }
