@@ -33,6 +33,11 @@ public static class AutoLoadLastSave
                 settings.Write();
                 Log.Warning("[Save Options] The previous automatic load did not finish; staying at the main menu.");
             }
+            else if (settings.AutoLoadLastSave && Log.Messages.Any(message => message.type == LogMessageType.Error))
+            {
+                skipped = true;
+                Log.Message("[Save Options] Errors were logged during startup; staying at the main menu instead of loading the latest save.");
+            }
         }
         if (skipped)
         {
@@ -41,12 +46,6 @@ public static class AutoLoadLastSave
         if (!settings.AutoLoadLastSave)
         {
             skipped = true;
-            return;
-        }
-        if (Log.Messages.Any(message => message.type == LogMessageType.Error))
-        {
-            skipped = true;
-            Log.Message("[Save Options] Errors were logged during startup; staying at the main menu instead of loading the latest save.");
             return;
         }
         if (Find.WindowStack.Windows.Count > 0)
@@ -72,13 +71,18 @@ public static class AutoLoadLastSave
             {
                 return;
             }
-            settings.AutoLoadInProgress = true;
-            settings.Write();
             if (settings.LoggingEnabled)
             {
                 Log.Message($"[Save Options] Automatically loading '{latest.Name}'.");
             }
-            GameDataSaveLoader.CheckVersionAndLoadGame(Path.GetFileNameWithoutExtension(latest.Name));
+            // Same as GameDataSaveLoader.CheckVersionAndLoadGame; the flag is set only once the load starts, after any mismatch dialog.
+            string saveName = Path.GetFileNameWithoutExtension(latest.Name);
+            PreLoadUtility.CheckVersionAndLoad(GenFilePaths.FilePathForSavedGame(saveName), ScribeMetaHeaderUtility.ScribeHeaderMode.Map, () =>
+            {
+                settings.AutoLoadInProgress = true;
+                settings.Write();
+                GameDataSaveLoader.LoadGame(saveName);
+            });
         }
         catch (Exception exception)
         {

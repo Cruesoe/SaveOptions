@@ -10,6 +10,7 @@
 
 [h2]Compatibility[/h2]
 Replaces Save on Negative Event, Save and Quit, and Auto Load Last Save, so disable them when using this mod.
+Letters from Letter Permanent Injury don't trigger a negative-event save.
 Safe to add to an existing save.
 
 [h2]Credits[/h2]

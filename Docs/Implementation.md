@@ -8,7 +8,7 @@ Verified against the installed RimWorld 1.7 Assembly-CSharp.dll with ilspycmd:
 
 - LetterStack.ReceiveLetter(Letter, string, int, bool) queues delayed letters and calls the same overload on arrival. The patch ignores delayed or hidden letters until received.
 - GameDataSaveLoader.SaveGame catches exceptions from SafeSaver.Save. A postfix on SafeSaver.Save records successful completion so failed saves never trigger quitting or success messages.
-- GameDataSaveLoader.CheckVersionAndLoadGame uses the game's normal version and mod checks before loading. Automatic loading uses this entry point.
+- GameDataSaveLoader.CheckVersionAndLoadGame passes GameDataSaveLoader.LoadGame to PreLoadUtility.CheckVersionAndLoad, which runs it at once or only after the player accepts a version or mod mismatch dialog. Automatic loading makes the same call and sets its pending-load flag inside the load action, so a declined dialog leaves no pending load.
 - A load that throws is handled by GameAndMapInitExceptionHandlers.ErrorWhileLoadingGame, which returns to the main menu in the same process. The pending-load flag is cleared only when a game loads or starts, so a failed automatic load is not retried on the next launch.
 - Root_Entry.Start performs the developer-mode autostart check once; automatic loading waits for the main menu instead of interfering with that check.
 - GenScene.GoToMainMenu clears queued events and transitions through the game's normal cleanup. Automatic loading runs at most once per process.
