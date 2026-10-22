@@ -13,7 +13,7 @@ Verified against the installed RimWorld 1.7 Assembly-CSharp.dll with ilspycmd:
 - Root_Entry.Start performs the developer-mode autostart check once; automatic loading waits for the main menu instead of interfering with that check.
 - GenScene.GoToMainMenu clears queued events and transitions through the game's normal cleanup. Automatic loading runs at most once per process.
 - ScribeExtractor resolves every saved class name through BackCompatibility.GetBackCompatibleType and logs "Could not find class" for unknown ones. A postfix maps Save and Quit's SaveNameTracker and GameStartSaver to their Save Options equivalents.
-- Only Assembly-CSharp is patchable in 1.7. The optional Letter Permanent Injury exclusion recognizes its call stack instead of patching that mod's assembly.
+- Only Assembly-CSharp is patchable in 1.7. When Letter Permanent Injury is loaded, a prefix and finalizer on DamageWorker_AddInjury.FinalizeAndAddInjury (the method it postfixes) mark injury finalization, and negative-event letters received during it don't trigger a save.
 
 The 1.6 reference assemblies have no method bodies, so the behavior above was read from 1.7 code. For 1.6, the signatures and parameter names of every patched and called method were checked against Krafs.Rimworld.Ref 1.6.4871 and match.
 
