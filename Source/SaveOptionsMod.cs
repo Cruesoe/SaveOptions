@@ -35,6 +35,8 @@ public sealed class SaveOptionsMod : Mod
             "SaveOptions_SaveAndQuitTip".Translate());
         list.CheckboxLabeled("SaveOptions_SaveOnGameStart".Translate(), ref Settings.SaveOnGameStart,
             "SaveOptions_SaveOnGameStartTip".Translate());
+        list.CheckboxLabeled("SaveOptions_QuickSaveKeys".Translate(), ref Settings.QuickSaveKeys,
+            "SaveOptions_QuickSaveKeysTip".Translate());
         list.GapLine();
         list.CheckboxLabeled("SaveOptions_AutoLoad".Translate(), ref Settings.AutoLoadLastSave,
             "SaveOptions_AutoLoadTip".Translate());

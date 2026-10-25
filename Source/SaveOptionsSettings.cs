@@ -10,6 +10,7 @@ public sealed class SaveOptionsSettings : ModSettings
     public int CooldownSeconds = 30;
     public bool SaveAndQuit = true;
     public bool SaveOnGameStart;
+    public bool QuickSaveKeys = true;
     public bool AutoLoadLastSave = true;
     public bool ShowAutoLoadPrompt = true;
     public int PromptSeconds = 3;
@@ -23,6 +24,7 @@ public sealed class SaveOptionsSettings : ModSettings
         Scribe_Values.Look(ref CooldownSeconds, "cooldownSeconds", 30);
         Scribe_Values.Look(ref SaveAndQuit, "saveAndQuit", true);
         Scribe_Values.Look(ref SaveOnGameStart, "saveOnGameStart", false);
+        Scribe_Values.Look(ref QuickSaveKeys, "quickSaveKeys", true);
         Scribe_Values.Look(ref AutoLoadLastSave, "autoLoadLastSave", true);
         Scribe_Values.Look(ref ShowAutoLoadPrompt, "showAutoLoadPrompt", true);
         Scribe_Values.Look(ref PromptSeconds, "promptSeconds", 3);
