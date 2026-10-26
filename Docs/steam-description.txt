@@ -5,6 +5,7 @@
 [*][b]Save on negative events:[/b] Major threats and negative events save your colony to "Bad Event".
 [*][b]Save and quit:[/b] The quit buttons save under your colony's name first. Hold Alt to quit without saving.
 [*][b]Start save:[/b] Each new colony can be saved as "Start" once it has landed.
+[*][b]Quicksave:[/b] Ctrl+S saves to "Quicksave" and Ctrl+L loads it.
 [*][b]Auto load:[/b] Your latest save loads when the game starts. Press any key during the countdown to stay at the menu.
 [/list]
 

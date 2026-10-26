@@ -11,6 +11,8 @@
   <SaveOptions_SaveAndQuitTip>Replace the normal quit buttons with Save and Quit, using your colony's name. Hold Alt to quit without saving. Commitment mode keeps its normal buttons.</SaveOptions_SaveAndQuitTip>
   <SaveOptions_SaveOnGameStart>Save new colonies as "Start"</SaveOptions_SaveOnGameStart>
   <SaveOptions_SaveOnGameStartTip>Save after the intro is dismissed and the starting drop pods have landed. Each new colony overwrites the same "Start" file.</SaveOptions_SaveOnGameStartTip>
+  <SaveOptions_QuickSaveKeys>Quicksave with Ctrl+S, quickload with Ctrl+L</SaveOptions_QuickSaveKeys>
+  <SaveOptions_QuickSaveKeysTip>Ctrl+S saves to "Quicksave" and Ctrl+L loads it. Not available in commitment mode.</SaveOptions_QuickSaveKeysTip>
   <SaveOptions_AutoLoad>Automatically load the latest save on startup</SaveOptions_AutoLoad>
   <SaveOptions_AutoLoadTip>Load the most recently modified save, including autosaves. Returning to the menu does not reload it. Startup errors or a previous failed automatic load keep you at the menu.</SaveOptions_AutoLoadTip>
   <SaveOptions_ShowPrompt>Show a countdown before automatically loading</SaveOptions_ShowPrompt>
@@ -22,5 +24,8 @@
   <SaveOptions_AutoLoadPrompt>Loading your latest save in {0} seconds.\nPress any key or click to stay at the main menu.</SaveOptions_AutoLoadPrompt>
   <SaveOptions_SavedStartFile>Saved starting colony as "{0}".</SaveOptions_SavedStartFile>
   <SaveOptions_SavedEventFile>Saved negative event as "{0}".</SaveOptions_SavedEventFile>
+  <SaveOptions_QuickSaved>Saved as "{0}".</SaveOptions_QuickSaved>
+  <SaveOptions_NoQuickSave>There is no "{0}" save to load yet.</SaveOptions_NoQuickSave>
+  <SaveOptions_QuickSaveCommitment>Quicksave and quickload are not available in commitment mode.</SaveOptions_QuickSaveCommitment>
   <SaveOptions_SaveFailed>Could not save "{0}". Your colony remains open.</SaveOptions_SaveFailed>
 </LanguageData>
