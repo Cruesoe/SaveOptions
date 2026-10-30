@@ -28,6 +28,8 @@ public sealed class QuickSaveHotkeys : GameComponent
 
         bool save = current.keyCode == KeyCode.S;
         current.Use();
+        // Colony Groups opens its Slave menu from WorldComponentUpdate on any event with Ctrl and S, used or not
+        current.keyCode = KeyCode.None;
         // Commitment mode keeps a single save
         if (game.Info.permadeathMode)
         {
