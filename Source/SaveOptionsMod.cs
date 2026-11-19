@@ -11,7 +11,7 @@ public sealed class SaveOptionsMod : Mod
     public SaveOptionsMod(ModContentPack content) : base(content)
     {
         Settings = GetSettings<SaveOptionsSettings>();
-        new Harmony("cruesoe.saveoptions").PatchAll();
+        new Harmony("cruesoe.saveoptions").PatchAll(typeof(SaveOptionsMod).Assembly);
     }
 
     public override string SettingsCategory() => "SaveOptions_SettingsCategory".Translate();

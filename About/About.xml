@@ -14,6 +14,8 @@ Negative events and major threats save to "Bad Event", with an adjustable cooldo
 
 Save and Quit saves under your colony's name before returning to the menu or exiting. Hold Alt to use the normal quit buttons. Commitment mode keeps its normal quit behavior. An optional "Start" save captures each new colony once its starting drop pods have landed.
 
+Ctrl+S saves to "Quicksave" and Ctrl+L loads it. Quicksave and quickload are not available in commitment mode.
+
 Auto Load Last Save loads the most recently modified save on startup, including autosaves. Press any key or click during the countdown to stay at the menu. Returning to the menu never triggers another automatic load. If an automatic load fails or crashes, the next launch stays at the menu.
 
 Disable the separate Save on Negative Event, Save and Quit, Auto Load Last Save and RimSaves mods when using Save Options.</description>
