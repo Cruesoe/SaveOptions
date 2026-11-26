@@ -29,6 +29,20 @@ public static class AutoLoadLastSave
         skipped = true;
     }
 
+    // Immediate windows (dev toolbar, tooltips, hover cards) are redrawn every frame and never block the load.
+    private static bool AnyDialogOpen()
+    {
+        WindowStack stack = Find.WindowStack;
+        for (int i = 0; i < stack.Count; i++)
+        {
+            if (stack[i] is not ImmediateWindow)
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+
     private static string OpenWindows()
     {
         if (Find.WindowStack == null || Find.WindowStack.Windows.Count == 0)
@@ -67,7 +81,7 @@ public static class AutoLoadLastSave
             skipped = true;
             return;
         }
-        if (Find.WindowStack.Windows.Count > 0)
+        if (AnyDialogOpen())
         {
             if (!reportedWindows)
             {
