@@ -11,13 +11,46 @@ public static class AutoLoadLastSave
     private static bool checkedStartup;
     private static bool skipped;
     private static float? promptEndsAt;
+    private static bool reportedWindows;
 
     public static void ObserveInput()
     {
-        if (Event.current.type == EventType.KeyDown || Event.current.type == EventType.MouseDown)
+        EventType type = Event.current.type;
+        if (type != EventType.KeyDown && type != EventType.MouseDown)
         {
-            skipped = true;
+            return;
         }
+        if (!skipped && SaveOptionsMod.Settings.AutoLoadLastSave)
+        {
+            string input = type == EventType.KeyDown ? $"a key press ({Event.current.keyCode})" : "a mouse click";
+            string stage = promptEndsAt == null ? "before the countdown started" : "during the countdown";
+            Log.Message($"[Save Options] Automatic load cancelled by {input} {stage}. Open windows: {OpenWindows()}.");
+        }
+        skipped = true;
+    }
+
+    // Immediate windows (dev toolbar, tooltips, hover cards) are redrawn every frame and never block the load.
+    private static bool AnyDialogOpen()
+    {
+        WindowStack stack = Find.WindowStack;
+        for (int i = 0; i < stack.Count; i++)
+        {
+            if (stack[i] is not ImmediateWindow)
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    private static string OpenWindows()
+    {
+        if (Find.WindowStack == null || Find.WindowStack.Windows.Count == 0)
+        {
+            return "none";
+        }
+        return string.Join(", ", Find.WindowStack.Windows.Select(window =>
+            window is ImmediateWindow ? $"ImmediateWindow {window.ID}" : window.GetType().FullName));
     }
 
     public static void OnMainMenu()
@@ -48,8 +81,13 @@ public static class AutoLoadLastSave
             skipped = true;
             return;
         }
-        if (Find.WindowStack.Windows.Count > 0)
+        if (AnyDialogOpen())
         {
+            if (!reportedWindows)
+            {
+                reportedWindows = true;
+                Log.Message($"[Save Options] Waiting for these windows to close before the automatic load: {OpenWindows()}.");
+            }
             return;
         }
 
@@ -67,8 +105,14 @@ public static class AutoLoadLastSave
         try
         {
             FileInfo? latest = SavePolicies.LatestSave(GenFilePaths.AllSavedGameFiles);
-            if (latest == null || ScribeMetaHeaderUtility.GameVersionOf(latest).NullOrEmpty())
+            if (latest == null)
             {
+                Log.Message("[Save Options] No save found to load automatically.");
+                return;
+            }
+            if (ScribeMetaHeaderUtility.GameVersionOf(latest).NullOrEmpty())
+            {
+                Log.Message($"[Save Options] '{latest.Name}' has no readable game version; staying at the main menu.");
                 return;
             }
             if (settings.LoggingEnabled)
